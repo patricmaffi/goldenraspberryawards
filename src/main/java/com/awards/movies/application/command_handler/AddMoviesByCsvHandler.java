@@ -13,6 +13,11 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Command responsible to read a csv file of a path, generate Movie entities from the lines and insert then on database
+ *
+ *
+ */
 @Component
 @AllArgsConstructor
 public class AddMoviesByCsvHandler implements ICommandHandler<List<Movie>, AddMoviesByCsv> {

@@ -12,8 +12,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Service responsible for grouping movies by producers
+ */
 @Component
 public class GroupingMoviesByProducerHandler implements ICommandHandler<Map<String, List<Movie>>, GroupingMoviesByProducer>{
+    /**
+     * Grouping movies
+     * @param GroupingMoviesByProducer respective command containing the movies
+     * @return Map of producers and their respective movies
+     */
     @Override
     public Map<String, List<Movie>> handle(GroupingMoviesByProducer command) {
 

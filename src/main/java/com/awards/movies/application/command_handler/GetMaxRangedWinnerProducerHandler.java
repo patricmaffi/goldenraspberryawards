@@ -16,12 +16,21 @@ import java.util.Map;
 
 import static com.awards.movies.application.util.MaxMovieIntervalComparator.getMaxInterval;
 
+/**
+ * Service responsible for getting the highest award interval from a movie producer
+ */
 @Component
 @AllArgsConstructor
 public class GetMaxRangedWinnerProducerHandler implements ICommandHandler<List<List<Movie>>, GetMaxRangedWinnerProducer>{
     private static final Logger logger = LogManager.getLogger(GetMaxRangedWinnerProducerHandler.class);
     MovieRepository repository;
     GroupingMoviesByProducerHandler groupingMoviesByProducerHandler;
+
+    /**
+     * get highest award interval
+     * @param GetMaxRangedWinnerProducer respective command
+     * @return the list of producers and their awarded movies
+     */
     @Override
     public List<List<Movie>> handle(GetMaxRangedWinnerProducer command) {
         logger.debug("Handle get list Max Ranged Winner");

@@ -9,6 +9,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
+/**
+ * Command responsible to insert entity Movie to database
+ */
 @Component
 @AllArgsConstructor
 public class AddMovieToDatabaseHandler implements ICommandHandler<Movie, AddMovieToDatabase> {
@@ -17,6 +20,11 @@ public class AddMovieToDatabaseHandler implements ICommandHandler<Movie, AddMovi
     MovieRepository repository;
     MovieFactoryByDto factory;
 
+    /**
+     * Save entity Movie to database
+     * @param AddMovieToDatabase respective command containing the movie entity
+     * @return the movie entity saved in database
+     */
     @Override
     public Movie handle(AddMovieToDatabase command) {
         logger.debug("Saving Movie");
