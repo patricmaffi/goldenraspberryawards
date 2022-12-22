@@ -10,9 +10,12 @@ import com.awards.movies.application.presenter.PremiumMinMaxWinnerView;
 import com.awards.movies.application.presenter.PremiumRangePresenter;
 import com.awards.movies.domain.Movie;
 import com.awards.movies.domain.MovieRepository;
+import com.awards.movies.domain.exception.MaxAwardsIntervalNotFound;
+import com.awards.movies.domain.exception.MinAwardsIntervalNotFound;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,8 +40,9 @@ public class AwardsController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(presenter.presentMany(entities));
     }
+    @ExceptionHandler({ MinAwardsIntervalNotFound.class, MaxAwardsIntervalNotFound.class })
     @GetMapping("/interval")
-    public ResponseEntity<IView> range() {
+    public ResponseEntity<IView> interval() {
         List<Movie> entities = repository.getOnlyWinners();
         var resultMin = getMinRangedWinnerProducerHandler
                 .handle(new GetMinRangedWinnerProducer());
