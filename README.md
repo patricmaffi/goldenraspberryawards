@@ -4,9 +4,10 @@ This project is technical challenge made to me for a Java Senior opportunity.<br
 
 ### What is this repository for? ###
 * Quick summary <br/>
-The application consist in a list of movies informations loaded in a H2 database.<br/>
-It is possible to insert new movies, list those movies and see the winners of Golden Raspberry Awards.<br/>
-The main challenge is show up the min and max interval of awards winners producers.<br/>
+It's a Back End Java Spring Boot Web Application. <br/>
+The application consists of a list of movies informations loaded in a H2 database.<br/>
+It is possible calling rest api to insert new movies, list those movies and see the winners of Golden Raspberry Awards.<br/>
+The main challenge is to show up the min and max interval of awards winners producers.<br/>
 
 ### How do I get set up? ###
 #### Java Execution ####
@@ -23,7 +24,14 @@ The main challenge is show up the min and max interval of awards winners produce
 #### Container Dependencies ####
 * [Docker](https://docs.docker.com/get-docker/)
 
-### Who do I talk to? ###
+### Who do I check movies results? ###
 
-* Repo owner or admin
-* Other community or team contact
+#### Web Browser ####
+* http://localhost:8080/movie
+* http://localhost:8080/awards
+* http://localhost:8080/awards/interval
+
+#### curl ####
+* curl http://localhost:8080/movie
+* curl http://localhost:8080/awards
+* curl http://localhost:8080/awards/interval
