@@ -20,12 +20,20 @@ import java.util.stream.Collectors;
 
 import static com.awards.movies.application.util.MinMovieIntervalComparator.getMinInterval;
 
+/**
+ * Service responsible for getting the lowest award interval from a movie producer
+ */
 @Component
 @AllArgsConstructor
 public class GetMinRangedWinnerProducerHandler implements ICommandHandler<List<List<Movie>>, GetMinRangedWinnerProducer>{
     private static final Logger logger = LogManager.getLogger(GetMinRangedWinnerProducerHandler.class);
     MovieRepository repository;
     GroupingMoviesByProducerHandler groupingMoviesByProducerHandler;
+    /**
+     * get lowest award interval
+     * @param GetMinRangedWinnerProducer respective command
+     * @return the list of producers and their awarded movies
+     */
     @Override
     public List<List<Movie>> handle(GetMinRangedWinnerProducer command) {
         logger.debug("Handle get list Max Ranged Winner");

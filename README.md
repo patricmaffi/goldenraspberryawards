@@ -12,7 +12,7 @@ The main challenge is to show up the min and max interval of awards winners prod
 ### How do I get set up? ###
 #### Java Execution ####
 * mvn clean package -f pom.xml
-* java -jar target/GoldenRaspberryAwards-0.0.1-SNAPSHOT.jar
+* java -jar target/golden-raspberry-awards-0.0.1-SNAPSHOT.jar
 
 #### Java Dependencies ####
 * [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)

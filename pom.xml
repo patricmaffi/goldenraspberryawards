@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.awards</groupId>
-	<artifactId>GoldenRaspberryAwards</artifactId>
+	<artifactId>golden-raspberry-awards</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>GoldenRaspberryAwards</name>
 	<description>PoC</description>
