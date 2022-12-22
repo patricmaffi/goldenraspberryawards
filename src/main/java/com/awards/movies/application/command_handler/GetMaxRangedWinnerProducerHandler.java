@@ -5,6 +5,7 @@ import com.awards.movies.application.command.GroupingMoviesByProducer;
 import com.awards.movies.application.util.MaxMovieIntervalComparator;
 import com.awards.movies.domain.Movie;
 import com.awards.movies.domain.MovieRepository;
+import com.awards.movies.domain.exception.MaxAwardsIntervalNotFound;
 import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -37,7 +38,7 @@ public class GetMaxRangedWinnerProducerHandler implements ICommandHandler<List<L
                 .stream()
                 .map(Map.Entry::getValue)
                 .max(new MaxMovieIntervalComparator())
-                .get();
+                .orElseThrow(MaxAwardsIntervalNotFound::new);
         int maxInterval = getMaxInterval(producerMaxInterval);
         logger.debug("maxInterval: " + maxInterval);
         var filteredMax = producersMultiplesAwards

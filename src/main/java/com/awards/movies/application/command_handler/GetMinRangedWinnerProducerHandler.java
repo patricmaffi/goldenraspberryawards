@@ -5,6 +5,7 @@ import com.awards.movies.application.command.GroupingMoviesByProducer;
 import com.awards.movies.application.util.MinMovieIntervalComparator;
 import com.awards.movies.domain.Movie;
 import com.awards.movies.domain.MovieRepository;
+import com.awards.movies.domain.exception.MinAwardsIntervalNotFound;
 import com.awards.movies.domain.factory.MovieFactoryByDto;
 import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.LogManager;
@@ -41,7 +42,7 @@ public class GetMinRangedWinnerProducerHandler implements ICommandHandler<List<L
                 .stream()
                 .map(Map.Entry::getValue)
                 .min(new MinMovieIntervalComparator())
-                .get();
+                .orElseThrow(MinAwardsIntervalNotFound::new);
         var minInterval = getMinInterval(producerMinInterval);
         logger.debug("minInterval: " + minInterval);
         var filteredMin = producersMultiplesAwards

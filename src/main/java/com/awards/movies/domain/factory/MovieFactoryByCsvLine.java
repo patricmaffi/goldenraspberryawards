@@ -8,7 +8,7 @@ import java.io.IOException;
 public class MovieFactoryByCsvLine implements IMovieFactory<String, Movie> {
 
     @Override
-    public Movie build(String model) throws IOException {
+    public Movie build(String model) {
 
         String[] arrModel = model.split(";");
         return new Movie(
