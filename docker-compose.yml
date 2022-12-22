@@ -1,11 +1,11 @@
 version: "3.3"
 services:
-  gra:
+  awards:
     build:
       context: .
       dockerfile: ./Dockerfile
     image: patricmaffi/golden-raspberry-awards
-    container_name: gra
+    container_name: gra-api
     command: java -jar -Dspring.profiles.active=dev GoldenRaspberryAwards-0.0.1-SNAPSHOT.jar
     restart: "no"
     ports:
