@@ -37,7 +37,7 @@ public class AwardsController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(presenter.presentMany(entities));
     }
-    @GetMapping("/range")
+    @GetMapping("/interval")
     public ResponseEntity<IView> range() {
         List<Movie> entities = repository.getOnlyWinners();
         var resultMin = getMinRangedWinnerProducerHandler
