@@ -1,27 +1,27 @@
-# README #
+# Golde Raspberry Awards #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This project is technical challenge made to me for a Java Senior opportunity.<br/>
 
 ### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Quick summary <br/>
+The application consist in a list of movies informations loaded in a H2 database.<br/>
+It is possible to insert new movies, list those movies and see the winners of Golden Raspberry Awards.<br/>
+The main challenge is show up the min and max interval of awards winners producers.<br/>
 
 ### How do I get set up? ###
+#### Java Execution ####
+* mvn clean package
+* java -jar target/GoldenRaspberryAwards-0.0.1-SNAPSHOT.jar
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+#### Java Dependencies ####
+* Java 17
+* Maven
 
-### Contribution guidelines ###
+#### Container Execution ####
+* docker run -p 8080:8080 patricmaffi/golden-raspberry-awards
 
-* Writing tests
-* Code review
-* Other guidelines
+#### Container Dependencies ####
+* Docker
 
 ### Who do I talk to? ###
 
