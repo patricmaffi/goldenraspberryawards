@@ -19,6 +19,7 @@ The main challenge is to show up the min and max interval of awards winners prod
 * [Maven](https://maven.apache.org/download.cgi)
 
 #### Container Execution ####
+* docker build -f Dockerfile -t patricmaffi/golden-raspberry-awards .
 * docker run -p 8080:8080 patricmaffi/golden-raspberry-awards
 
 #### Container Dependencies ####
