@@ -4,7 +4,7 @@ import com.awards.movies.application.command.GetPremiumMinMaxWinner;
 import com.awards.movies.application.command_handler.GetPremiumMinMaxWinnerHandler;
 import com.awards.movies.application.exception.MaxAwardsIntervalNotFound;
 import com.awards.movies.application.exception.MinAwardsIntervalNotFound;
-import com.awards.movies.application.presenter.IView;
+import com.awards.movies.application.view.IView;
 import com.awards.movies.application.presenter.MoviePresenter;
 import com.awards.movies.domain.Movie;
 import com.awards.movies.domain.MovieRepository;

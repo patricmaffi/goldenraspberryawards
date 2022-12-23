@@ -3,7 +3,7 @@ package com.awards.movies.entrypoint.http;
 import com.awards.movies.application.command.AddMovieToDatabase;
 import com.awards.movies.application.command_handler.AddMovieToDatabaseHandler;
 import com.awards.movies.application.dto.MovieDto;
-import com.awards.movies.application.presenter.IView;
+import com.awards.movies.application.view.IView;
 import com.awards.movies.application.presenter.MoviePresenter;
 import com.awards.movies.domain.Movie;
 import com.awards.movies.domain.MovieRepository;
