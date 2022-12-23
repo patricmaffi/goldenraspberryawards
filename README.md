@@ -24,10 +24,10 @@ The main challenge is to show up the min and max interval of awards winners prod
 #### Container Dependencies ####
 * [Docker](https://docs.docker.com/get-docker/)
 
-### Executing Tests ###
+### How do i execute tests? ###
 * mvn clean test
 
-### Who do I check movies results? ###
+### How do i check movies results? ###
 
 #### Web Browser ####
 * http://localhost:8080/movie
