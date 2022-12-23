@@ -2,7 +2,7 @@ package com.awards.movies.application.command_handler;
 
 import com.awards.movies.application.command.AddMovieToDatabase;
 import com.awards.movies.domain.Movie;
-import com.awards.movies.domain.MovieRepository;
+import com.awards.movies.domain.repository.MovieRepository;
 import com.awards.movies.domain.factory.MovieFactoryByDto;
 import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.LogManager;

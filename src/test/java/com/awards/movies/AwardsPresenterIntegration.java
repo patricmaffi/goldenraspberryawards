@@ -9,7 +9,7 @@ import com.awards.movies.application.command_handler.GroupingMoviesByProducerHan
 import com.awards.movies.application.view.PremiumMinMaxWinnerView;
 import com.awards.movies.application.presenter.PremiumRangePresenter;
 import com.awards.movies.domain.Movie;
-import com.awards.movies.domain.MovieRepository;
+import com.awards.movies.domain.repository.MovieRepository;
 import com.awards.movies.application.exception.MaxAwardsIntervalNotFound;
 import com.awards.movies.application.exception.MinAwardsIntervalNotFound;
 import com.awards.movies.domain.factory.MovieFactoryByCsvLine;

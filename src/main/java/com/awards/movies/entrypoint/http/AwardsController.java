@@ -7,7 +7,7 @@ import com.awards.movies.application.exception.MinAwardsIntervalNotFound;
 import com.awards.movies.application.view.IView;
 import com.awards.movies.application.presenter.MoviePresenter;
 import com.awards.movies.domain.Movie;
-import com.awards.movies.domain.MovieRepository;
+import com.awards.movies.domain.repository.MovieRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
