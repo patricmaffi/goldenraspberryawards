@@ -1,5 +1,6 @@
-package com.awards.movies.domain;
+package com.awards.movies.domain.repository;
 
+import com.awards.movies.domain.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

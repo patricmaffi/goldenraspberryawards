@@ -4,7 +4,7 @@ import com.awards.movies.application.command.GetMaxRangedWinnerProducer;
 import com.awards.movies.application.command.GetMinRangedWinnerProducer;
 import com.awards.movies.application.command.GroupingMoviesByProducer;
 import com.awards.movies.domain.Movie;
-import com.awards.movies.domain.MovieRepository;
+import com.awards.movies.domain.repository.MovieRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
