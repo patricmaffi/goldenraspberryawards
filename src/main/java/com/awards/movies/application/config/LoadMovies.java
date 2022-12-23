@@ -16,7 +16,7 @@ public class LoadMovies {
     AddMoviesByCsvHandler handler;
     @PostConstruct
     public List<Movie> run() throws IOException {
-        return handler.handle(new AddMoviesByCsv("static/movielist.csv"))
+        return handler.handle(new AddMoviesByCsv("static/movielist.csv"));
     }
 
 }
