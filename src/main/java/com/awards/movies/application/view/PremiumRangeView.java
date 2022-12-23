@@ -1,4 +1,4 @@
-package com.awards.movies.application.presenter;
+package com.awards.movies.application.view;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

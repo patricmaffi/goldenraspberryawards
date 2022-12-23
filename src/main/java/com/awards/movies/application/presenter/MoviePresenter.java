@@ -1,5 +1,7 @@
 package com.awards.movies.application.presenter;
 
+import com.awards.movies.application.view.IView;
+import com.awards.movies.application.view.MovieView;
 import com.awards.movies.domain.Movie;
 import org.springframework.stereotype.Component;
 

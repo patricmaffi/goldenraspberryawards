@@ -6,7 +6,7 @@ import com.awards.movies.application.command.GroupingMoviesByProducer;
 import com.awards.movies.application.command_handler.GetMaxRangedWinnerProducerHandler;
 import com.awards.movies.application.command_handler.GetMinRangedWinnerProducerHandler;
 import com.awards.movies.application.command_handler.GroupingMoviesByProducerHandler;
-import com.awards.movies.application.presenter.PremiumMinMaxWinnerView;
+import com.awards.movies.application.view.PremiumMinMaxWinnerView;
 import com.awards.movies.application.presenter.PremiumRangePresenter;
 import com.awards.movies.domain.Movie;
 import com.awards.movies.domain.MovieRepository;

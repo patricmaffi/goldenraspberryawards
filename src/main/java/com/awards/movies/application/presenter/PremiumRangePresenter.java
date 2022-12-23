@@ -2,6 +2,7 @@ package com.awards.movies.application.presenter;
 
 import com.awards.movies.application.util.MaxMovieIntervalComparator;
 import com.awards.movies.application.util.MinMovieIntervalComparator;
+import com.awards.movies.application.view.PremiumRangeView;
 import com.awards.movies.domain.Movie;
 import org.springframework.stereotype.Component;
 
