@@ -1,4 +1,4 @@
-package com.awards.movies.domain.exception;
+package com.awards.movies.application.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
