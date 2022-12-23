@@ -7,6 +7,7 @@ import com.awards.movies.application.view.IView;
 import com.awards.movies.application.presenter.MoviePresenter;
 import com.awards.movies.domain.Movie;
 import com.awards.movies.domain.MovieRepository;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +30,7 @@ public class MovieController {
     }
 
     @PostMapping()
-    public ResponseEntity<IView> insertMovie(@RequestBody MovieDto movie) {
+    public ResponseEntity<IView> insertMovie(@Valid @RequestBody MovieDto movie) {
         Movie savedMovie = addMovieToDatabaseHandler.handle(new AddMovieToDatabase(movie));
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(presenter.present(savedMovie));
