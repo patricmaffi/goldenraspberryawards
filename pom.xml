@@ -15,6 +15,7 @@
 	<description>PoC</description>
 	<properties>
 		<java.version>17</java.version>
+		<io.springfox.version>3.0.0</io.springfox.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -50,7 +51,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.14</version>
+		</dependency>
 	</dependencies>
 
 	<build>

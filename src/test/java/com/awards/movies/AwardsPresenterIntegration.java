@@ -10,8 +10,8 @@ import com.awards.movies.application.presenter.PremiumMinMaxWinnerView;
 import com.awards.movies.application.presenter.PremiumRangePresenter;
 import com.awards.movies.domain.Movie;
 import com.awards.movies.domain.MovieRepository;
-import com.awards.movies.domain.exception.MaxAwardsIntervalNotFound;
-import com.awards.movies.domain.exception.MinAwardsIntervalNotFound;
+import com.awards.movies.application.exception.MaxAwardsIntervalNotFound;
+import com.awards.movies.application.exception.MinAwardsIntervalNotFound;
 import com.awards.movies.domain.factory.MovieFactoryByCsvLine;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,7 +22,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
