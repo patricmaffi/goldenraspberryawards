@@ -39,10 +39,12 @@ public class GetPremiumMinMaxWinnerHandler implements ICommandHandler<IView, Get
 
         var viewMin = resultMin.stream()
                 .map(e -> premiumRangePresenter.presentMin(e))
-                .collect(Collectors.toList());
+                .flatMap(e -> e.stream())
+                .toList();
 
         var viewMax = resultMax.stream()
                 .map(e -> premiumRangePresenter.presentMax(e))
+                .flatMap(e -> e.stream())
                 .toList();
 
         return new PremiumMinMaxWinnerView()

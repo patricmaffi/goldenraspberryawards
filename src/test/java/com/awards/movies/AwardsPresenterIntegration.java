@@ -88,7 +88,7 @@ public class AwardsPresenterIntegration {
 
         var result = new PremiumMinMaxWinnerView();
         result.withMin(viewMin);
-        result.withMax(viewMax);
+        result.withMax(viewMax.stream().flatMap(e -> e.stream()).toList());
 
         ObjectMapper mapper = new ObjectMapper();
 
