@@ -2,6 +2,7 @@ package com.awards.movies.application.presenter;
 
 import com.awards.movies.application.util.MaxMovieIntervalComparator;
 import com.awards.movies.application.util.MinMovieIntervalComparator;
+import com.awards.movies.application.view.IView;
 import com.awards.movies.application.view.PremiumRangeView;
 import com.awards.movies.domain.Movie;
 import org.springframework.stereotype.Component;
@@ -12,31 +13,39 @@ import java.util.List;
 @Component
 public class PremiumRangePresenter{
 
-    public PremiumRangeView present(List<Movie> entities) {
-        Movie entity = entities.get(0);
-        Movie entity2 = entities.get(1);
+    public PremiumRangeView present(Movie entity, Movie entity2) {
         return new PremiumRangeView()
                 .withProducer(entity.getProducers())
                 .withPreviousWin(entity.getMovieYear())
                 .withFollowingWin(entity2.getMovieYear());
     }
-    public PremiumRangeView presentMin(List<Movie> entities) {
+    public List<PremiumRangeView> presentMin(List<Movie> entities) {
         int interval = MinMovieIntervalComparator.getMinInterval(entities);
         var orderedMovies = entities.stream()
                 .sorted((a,b) -> a.getMovieYear().compareTo(b.getMovieYear()))
                 .toList();
         var rangedMovies = filterMinIntervalMovies(orderedMovies, interval);
-        var view = present(rangedMovies);
-        return view.withInterval(interval);
+
+        List<PremiumRangeView> winners = new ArrayList<>();
+        for(int i = 0; i < rangedMovies.size(); i+=2) {
+            winners.add(present(rangedMovies.get(i), rangedMovies.get(i+1))
+                    .withInterval(interval));
+        }
+        return winners;
     }
-    public PremiumRangeView presentMax(List<Movie> entities) {
+    public List<PremiumRangeView> presentMax(List<Movie> entities) {
         int interval = MaxMovieIntervalComparator.getMaxInterval(entities);
         var orderedMovies = entities.stream()
                 .sorted((a,b) -> a.getMovieYear().compareTo(b.getMovieYear()))
                 .toList();
         var rangedMovies = filterMaxIntervalMovies(orderedMovies, interval);
-        var view = present(rangedMovies);
-        return view.withInterval(interval);
+
+        List<PremiumRangeView> winners = new ArrayList<>();
+        for(int i = 0; i < rangedMovies.size(); i+=2) {
+            winners.add(present(rangedMovies.get(i), rangedMovies.get(i+1))
+                    .withInterval(interval));
+        }
+        return winners;
     }
 
     private List<Movie> filterMinIntervalMovies(List<Movie> movies, int interval){
